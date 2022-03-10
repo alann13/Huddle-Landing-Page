@@ -1,1 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
 @import url('./reset.css');
+
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --magenta: hsl(300, 69%, 71%);
+  --white: white;
+
+  --primaryFont: 'Poppins', sans-serif;
+  --secondaryFont: 'Open Sans', sans-serif;
+}
+
+body {
+  background-image: url('../images/bg-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--violet);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 3rem 0;
+}
+
+.content-intro {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-intro img {
+  max-width: 42.875rem;
+}
+
+.content-text-container {
+  flex-basis: 40%;
+}
+
+.content-text-container > * {
+  margin: 2rem 0;
+}
+
+.content-text-container h2 {
+  color: var(--white);
+  font-family: var(--primaryFont);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+.content-text-container p {
+  color: var(--white);
+  font-family: var(--secondaryFont);
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.content-text-container .link-button {
+  align-items: center;
+  background: var(--white);
+  border-radius: 28px;
+  box-shadow: 2px 4px 9px 3px rgb(0, 0, 0, 20%);
+  color: var(--violet);
+  display: flex;
+  font-size: 1.125rem;
+  font-family: var(--primaryFont);
+  height: 3.5rem;
+  justify-content: center;
+  max-width: 12.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.content-text-container .link-button:hover {
+  background: var(--magenta);
+  color: var(--white);
+}
+
+footer {
+  display: flex;
+  justify-content: end;
+}
+
+.social-medias-container {
+  display: flex;
+  width: 9.5rem;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.social-medias-container li {
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  transition: all 0.3s ease;
+  width: 40px;
+}
+
+.social-medias-container li:hover {
+  color: var(--magenta);
+  border: 1px solid currentColor;
+}
+
+.social-medias-container li a {
+  color: inherit;
+}
+
+@media only screen and (max-width: 80rem) {
+  body {
+    max-width: 55rem;
+    padding: 7rem 1.5rem;
+  }
+
+  .content-intro img {
+    max-width: 25rem;
+  }
+
+  .content-text-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-text-container p {
+    font-size: 1rem;
+  }
+
+  .content-text-container .link-button {
+    font-size: 0.75rem;
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 50rem) {
+  body {
+    background-image: url('../images/bg-mobile.svg');
+    background-size: contain;
+    background-position: top;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+  }
+
+  h1 {
+    width: 7.5rem;
+  }
+
+  .content-intro {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content-intro img {
+    margin-bottom: 3rem;
+  }
+
+  .content-text-container > * {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .content-text-container .link-button {
+    height: 2.5rem;
+    margin: 2rem auto 0;
+  }
+
+  footer {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 30rem) {
+  .content-intro img {
+    max-width: 18rem;
+  }
+}
