@@ -1,28 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
-@import url('./reset.css');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+@import url("./reset.css");
 
 :root {
+  --light-color: white;
   --violet: hsl(257, 40%, 49%);
   --magenta: hsl(300, 69%, 71%);
-  --white: white;
 
-  --primaryFont: 'Poppins', sans-serif;
-  --secondaryFont: 'Open Sans', sans-serif;
+  --primaryFont: "Poppins", sans-serif;
+  --secondaryFont: "Open Sans", sans-serif;
 }
 
 body {
-  background-image: url('../images/bg-desktop.svg');
+  background-image: url("../images/bg-desktop.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-color: var(--violet);
+}
+
+h1 img {
+  width: 12.8rem;
+}
+
+.page-layout {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
   margin: 0 auto;
   max-width: 80rem;
+  min-block-size: 100vh;
   padding: 3rem 0;
+}
+
+.page-layout > * {
+  margin-block: 1rem;
+}
+
+.page-layout > :first-child:not(h1) {
+  margin-block-start: 0;
+}
+
+.page-layout > :last-child:not(h1) {
+  margin-block-end: 0;
+}
+
+.page-layout main {
+  margin-block: auto;
 }
 
 .content-intro {
@@ -31,7 +53,7 @@ body {
 }
 
 .content-intro img {
-  max-width: 42.875rem;
+  max-width: 43.5rem;
 }
 
 .content-text-container {
@@ -39,11 +61,11 @@ body {
 }
 
 .content-text-container > * {
-  margin: 2rem 0;
+  margin-block: 2rem;
 }
 
 .content-text-container h2 {
-  color: var(--white);
+  color: var(--light-color);
   font-family: var(--primaryFont);
   font-size: 2.5rem;
   font-weight: 600;
@@ -52,15 +74,15 @@ body {
 }
 
 .content-text-container p {
-  color: var(--white);
+  color: var(--light-color);
   font-family: var(--secondaryFont);
   font-size: 1.125rem;
   line-height: 1.5;
 }
 
-.content-text-container .link-button {
+.content-text-container a {
   align-items: center;
-  background: var(--white);
+  background: var(--light-color);
   border-radius: 28px;
   box-shadow: 2px 4px 9px 3px rgb(0, 0, 0, 20%);
   color: var(--violet);
@@ -75,9 +97,9 @@ body {
   transition: all 0.3s ease;
 }
 
-.content-text-container .link-button:hover {
+.content-text-container a:hover {
   background: var(--magenta);
-  color: var(--white);
+  color: var(--light-color);
 }
 
 footer {
@@ -85,18 +107,18 @@ footer {
   justify-content: end;
 }
 
-.social-medias-container {
+.social-media-list {
   display: flex;
   width: 9.5rem;
   justify-content: space-between;
   padding: 0;
 }
 
-.social-medias-container li {
+.social-media-list li {
   align-items: center;
   border: 1px solid currentColor;
   border-radius: 50%;
-  color: var(--white);
+  color: var(--light-color);
   cursor: pointer;
   display: flex;
   height: 40px;
@@ -105,17 +127,17 @@ footer {
   width: 40px;
 }
 
-.social-medias-container li:hover {
+.social-media-list li:hover {
   color: var(--magenta);
   border: 1px solid currentColor;
 }
 
-.social-medias-container li a {
+.social-media-list li a {
   color: inherit;
 }
 
 @media only screen and (max-width: 80rem) {
-  body {
+  .page-layout {
     max-width: 55rem;
     padding: 7rem 1.5rem;
   }
@@ -132,7 +154,7 @@ footer {
     font-size: 1rem;
   }
 
-  .content-text-container .link-button {
+  .content-text-container a {
     font-size: 0.75rem;
     height: 2.5rem;
   }
@@ -140,11 +162,13 @@ footer {
 
 @media only screen and (max-width: 50rem) {
   body {
-    background-image: url('../images/bg-mobile.svg');
+    background-image: url("../images/bg-mobile.svg");
     background-size: contain;
     background-position: top;
-    margin: 0 auto;
-    padding: 1rem 1.5rem;
+  }
+
+  .page-layout {
+    padding-block: 1rem;
   }
 
   h1 {
@@ -159,25 +183,20 @@ footer {
 
   .content-intro img {
     margin-bottom: 3rem;
+    width: 100%;
   }
 
   .content-text-container > * {
-    margin: 1rem 0;
+    margin-block: 1rem;
     text-align: center;
   }
 
-  .content-text-container .link-button {
+  .content-text-container a {
     height: 2.5rem;
     margin: 2rem auto 0;
   }
 
   footer {
     justify-content: center;
-  }
-}
-
-@media only screen and (max-width: 30rem) {
-  .content-intro img {
-    max-width: 18rem;
   }
 }
